@@ -1,6 +1,5 @@
 import React from 'react';
 import Home from './components/Home';
-import About from './components/About';
 import Projects from './components/Projects';
 import Education from './components/Education';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -20,7 +19,6 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/projects' element={<Projects/>}/>
         <Route path='/education' element={<Education/>}/>
-        <Route path='/about' element={<About/>}/>
         <Route path='/experience' element={<Experience/>}/>
         <Route path='/contact' element={<ContactMe/>}/>
       </Routes>
