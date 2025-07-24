@@ -1,0 +1,18 @@
+.nav-link-custom {
+  position: relative;
+  color: #ddd !important;
+  margin-left: 1rem;
+  transition: all 0.3s ease;
+}
+
+.nav-link-custom:hover {
+  color: #0dcaf0 !important;
+  text-shadow: 0 0 8px rgba(13, 202, 240, 0.6);
+}
+
+.nav-link-custom.active {
+  color: #0dcaf0 !important;
+  font-weight: 600;
+  border-bottom: 2px solid #0dcaf0;
+}
+
