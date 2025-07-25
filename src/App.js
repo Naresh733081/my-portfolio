@@ -15,6 +15,7 @@ function App() {
   return (
     <div >
       <CustomNavbar />
+      
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/projects' element={<Projects/>}/>
