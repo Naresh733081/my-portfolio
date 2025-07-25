@@ -15,4 +15,15 @@
   font-weight: 600;
   border-bottom: 2px solid #0dcaf0;
 }
+.hamburger-icon.expanded {
+  color: rgb(240, 8, 221);
+  border-color: rgb(228, 10, 137);
+  
+}
+
+.hamburger-icon {
+  color: #0fc5dd; 
+  border-color: #17a2b8;
+  transition: all 0.3s ease;
+}
 

@@ -17,7 +17,7 @@ function CustomNavbar() {
             <i className="bi bi-code-slash me-2"></i>Naresh Kamineni
           </Navbar.Brand>
 
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={() => setExpanded(!expanded)} />
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" onClick={() => setExpanded(!expanded)} className={`hamburger-icon ${expanded ? "expanded" : ""}`} />
 
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="ms-auto">
