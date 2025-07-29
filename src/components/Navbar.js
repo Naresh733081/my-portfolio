@@ -36,7 +36,9 @@ function CustomNavbar() {
               }}>
                 Experience
               </Nav.Link>
-              <Nav.Link as={NavLink} to="/skills" className="nav-link-custom">
+              <Nav.Link as={NavLink} to="/skills" className="nav-link-custom" onClick={() => {
+                if (expanded) setExpanded(false);
+              }}>
                 Skills
               </Nav.Link>
               <Nav.Link as={NavLink} to="/projects" className="nav-link-custom" onClick={() => {

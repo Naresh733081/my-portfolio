@@ -103,24 +103,24 @@ function Experience() {
                                 backdropFilter: "blur(10px)",
                             }}
                         >
-                            {/* Duration Badge */}
-                            <span
-                                className="position-absolute top-0 end-0 badge bg-info text-dark"
-                                style={{
-                                    transform: "translate(-10px, 10px)",
-                                    fontSize: "0.8rem",
-                                    padding: "0.4em 0.75em",
-                                    borderRadius: "10px",
-                                }}
-                            >
-                                {exp.duration}
-                            </span>
-
-                            {/* Title */}
-                            <div className="d-flex align-items-center gap-2 mb-2">
-                                {exp.icon}
-                                <h5 className="mb-0 text-info fw-semibold">{exp.role}</h5>
+                            {/* duration badge */}
+                            <div className="d-flex flex-column flex-sm-row justify-content-between align-items-start align-items-sm-center mb-2 gap-2">
+                                <div className="d-flex align-items-center gap-2">
+                                    {exp.icon}
+                                    <h5 className="mb-0 text-info fw-semibold">{exp.role}</h5>
+                                </div>
+                                <span
+                                    className="badge bg-info text-dark"
+                                    style={{
+                                        fontSize: "0.8rem",
+                                        padding: "0.4em 0.75em",
+                                        borderRadius: "10px",
+                                    }}
+                                >
+                                    {exp.duration}
+                                </span>
                             </div>
+
                             <h6 className="text-light mb-3">
                                 {exp.company === "APCFSS" ? (
                                     <div className="d-flex flex-column flex-md-row align-items-start align-items-md-center gap-2">
