@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import {
   FaTools,
+  FaGithub,
   FaLaptopCode,
   FaMicrochip
 } from "react-icons/fa";
@@ -82,6 +83,7 @@ function Projects() {
         { name: "Bootstrap", icon: <SiBootstrap color="#7952B3" /> },
         { name: "Framer Motion", icon: <SiFramer color="#f61067" /> },
       ],
+      url: "https://github.com/Naresh733081/my-portfolio.git"
     },
     {
       title: "Collision Avoidance System",
@@ -179,6 +181,34 @@ function Projects() {
                   </div>
                 ))}
               </div>
+              {project.url && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline-info mt-3 fw-semibold d-inline-flex align-items-center gap-2"
+                  style={{
+                    backdropFilter: "blur(4px)",
+                    backgroundColor: "rgba(13, 202, 240, 0.05)",
+                    border: "1px solid rgba(13, 202, 240, 0.6)",
+                    color: "#0dcaf0",
+                    boxShadow: "0 0 6px rgba(13, 202, 240, 0.3)",
+                    transition: "all 0.3s ease-in-out",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.backgroundColor = "rgba(13, 202, 240, 0.15)";
+                    e.target.style.boxShadow = "0 0 10px rgba(13, 202, 240, 0.6)";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.backgroundColor = "rgba(13, 202, 240, 0.05)";
+                    e.target.style.boxShadow = "0 0 6px rgba(13, 202, 240, 0.3)";
+                  }}
+                >
+                  <FaGithub size={16} /> Explore Code
+                </a>
+              )}
+
+
             </div>
           </motion.div>
         ))}
