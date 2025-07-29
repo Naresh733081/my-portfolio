@@ -4,7 +4,6 @@ import Projects from './components/Projects';
 import Education from './components/Education';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
 import CustomNavbar from './components/Navbar';
 import { Route, Routes } from 'react-router-dom';
 import Experience from './components/Experience';
