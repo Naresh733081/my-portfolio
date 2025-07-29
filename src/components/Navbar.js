@@ -26,9 +26,6 @@ function CustomNavbar() {
               }}>
                 Home
               </Nav.Link>
-              {/* <Nav.Link as={NavLink} to="/about" className="nav-link-custom">
-              About
-            </Nav.Link> */}
               <Nav.Link as={NavLink} to="/education" className="nav-link-custom" onClick={() => {
                 if (expanded) setExpanded(false);
               }}>
@@ -38,6 +35,9 @@ function CustomNavbar() {
                 if (expanded) setExpanded(false);
               }}>
                 Experience
+              </Nav.Link>
+              <Nav.Link as={NavLink} to="/skills" className="nav-link-custom">
+                Skills
               </Nav.Link>
               <Nav.Link as={NavLink} to="/projects" className="nav-link-custom" onClick={() => {
                 if (expanded) setExpanded(false);
