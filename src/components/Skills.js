@@ -124,16 +124,28 @@ function Skills() {
                                 return (
                                     <Col key={idx} xs={6} sm={4} md={3} lg={2} className="text-center">
                                         <motion.div
-                                            whileHover={{ scale: 1.12 }}
+                                            whileHover={{
+                                                scale: 1.1,
+                                                border: `2px solid ${tech.color}`,
+                                                boxShadow: `0 0 12px ${tech.color}66`
+                                            }}
+                                            whileTap={{
+                                                scale: 0.98,
+                                                border: `2px solid ${tech.color}`,
+                                                boxShadow: `0 0 12px ${tech.color}99`
+                                            }}
                                             transition={{ duration: 0.3 }}
                                             style={{
                                                 background: "#1b2225",
                                                 padding: "1rem",
                                                 borderRadius: "1rem",
+                                                border: "2px solid transparent",
+                                                height: "100%",
                                                 boxShadow: "0 2px 12px rgba(0,0,0,0.2)",
-                                                height: "100%"
+                                                transition: "border 0.3s ease"
                                             }}
                                         >
+
                                             {
                                                 Icon.render ? (
                                                     <Icon
