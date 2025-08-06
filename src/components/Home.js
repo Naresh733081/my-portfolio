@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { NavLink } from "react-router-dom";
 import profileImage from "../assets/profileImage.jpg";
+import resume from "../assets/resume.pdf";
 import { motion } from "framer-motion";
 import {
     SiHtml5, SiCss3, SiJavascript, SiReact,
@@ -82,7 +83,7 @@ function Home() {
                                 {/* Resume Download Button */}
                                 <motion.div whileTap={{ scale: 0.95 }}>
                                     <a
-                                        href="/resume.pdf"
+                                        href={resume}
                                         download
                                         className="btn btn-outline-warning fw-semibold text-light"
                                         style={{
