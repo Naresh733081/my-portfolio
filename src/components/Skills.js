@@ -8,18 +8,20 @@ import { ReactComponent as PostmanIcon } from '../assets/postman.svg';
 
 import {
     FaJava, FaCuttlefish, FaReact, FaBootstrap, FaGitAlt, FaGithub,
-    FaNodeJs, FaDatabase
+    FaNodeJs, FaDatabase,
+    FaPython
 } from "react-icons/fa";
 import {
     SiHtml5, SiCss3, SiJavascript, SiRedux, SiFormik,
-    SiSpringboot, SiPostgresql
+    SiSpringboot, SiPostgresql,
 } from "react-icons/si";
 
 const skillSections = {
     "Programming Languages": [
         { icon: FaJava, label: "Java", color: "#f89820" },
         { icon: SiJavascript, label: "JavaScript", color: "#f7df1e" },
-        { icon: FaCuttlefish, label: "C", color: "#288de0ff" },
+        { icon: FaCuttlefish, label: "C", color: "#288de0" },
+        { icon: FaPython, label: "Python", color: "#3776AB" }, 
     ],
     "UI Development": [
         { icon: SiHtml5, label: "HTML5", color: "#e34c26" },
@@ -47,7 +49,6 @@ const skillSections = {
     ],
 };
 
-
 const csConceptsAdvanced = [
     {
         title: "Data Structures & Algorithms",
@@ -70,32 +71,33 @@ const csConceptsAdvanced = [
     }
 ];
 
-
 function Skills() {
+    const isMobile = typeof window !== "undefined" && window.innerWidth < 576;
+
     return (
         <section
             style={{
                 background: "linear-gradient(135deg, #0a0f12, #11191d)",
                 color: "#e0e0e0",
-                padding: "2rem 0",
+                padding: "3rem 0",
                 fontFamily: "'Segoe UI', sans-serif"
             }}
         >
             <Container>
-                <motion.h2
+                <motion.h4
                     initial={{ opacity: 0, y: -30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
                     className="text-center fw-bold mb-5"
                     style={{
-                        fontSize: "3rem",
+                        fontSize: "2.5rem",
                         color: "#0dcaf0",
                         letterSpacing: "1px",
-                        textShadow: "0 0 20px rgba(13, 202, 240, 0.4)"
+                        textShadow: "0 0 25px rgba(13, 202, 240, 0.4)"
                     }}
                 >
                     Tech Stack
-                </motion.h2>
+                </motion.h4>
 
                 {Object.entries(skillSections).map(([section, skills], i) => (
                     <motion.div
@@ -118,55 +120,54 @@ function Skills() {
                             {section}
                         </h4>
 
-                        <Row className="gx-4 gy-4">
+                        <Row className="gx-3 gy-4">
                             {skills.map((tech, idx) => {
                                 const Icon = tech.icon;
                                 return (
-                                    <Col key={idx} xs={6} sm={4} md={3} lg={2} className="text-center">
+                                    <Col key={idx} xs={4} sm={3} md={2} className="text-center">
                                         <motion.div
-                                            whileHover={{
-                                                scale: 1.1,
-                                                border: `2px solid ${tech.color}`,
-                                                boxShadow: `0 0 12px ${tech.color}66`
-                                            }}
-                                            whileTap={{
-                                                scale: 0.98,
-                                                border: `2px solid ${tech.color}`,
-                                                boxShadow: `0 0 12px ${tech.color}99`
-                                            }}
-                                            transition={{ duration: 0.3 }}
+                                            whileHover={{ scale: 1.12, boxShadow: `0 0 18px ${tech.color}80` }}
+                                            whileTap={{ scale: 0.95, boxShadow: `0 0 12px ${tech.color}99` }}
+                                            transition={{ duration: 0.25 }}
                                             style={{
-                                                background: "#1b2225",
-                                                padding: "1rem",
-                                                borderRadius: "1rem",
-                                                border: "2px solid transparent",
-                                                height: "100%",
-                                                boxShadow: "0 2px 12px rgba(0,0,0,0.2)",
-                                                transition: "border 0.3s ease"
+                                                background: isMobile
+                                                    ? "transparent"
+                                                    : "rgba(255, 255, 255, 0.05)",
+                                                backdropFilter: isMobile ? "none" : "blur(10px)",
+                                                padding: isMobile ? "0.3rem" : "1rem",
+                                                borderRadius: isMobile ? "0.5rem" : "1rem",
+                                                border: isMobile ? "none" : `1px solid ${tech.color}33`,
+                                                display: "flex",
+                                                flexDirection: "column",
+                                                alignItems: "center",
+                                                gap: "0.3rem",
+                                                transition: "all 0.3s ease"
                                             }}
                                         >
-
-                                            {
-                                                Icon.render ? (
-                                                    <Icon
-                                                        width={42}
-                                                        height={42}
-                                                        style={{
-                                                            fill: tech.color,
-                                                            filter: `drop-shadow(0 0 5px ${tech.color}88)`
-                                                        }}
-                                                    />
-                                                ) : (
-                                                    <Icon
-                                                        size={42}
-                                                        color={tech.color}
-                                                        style={{
-                                                            filter: `drop-shadow(0 0 5px ${tech.color}88)`
-                                                        }}
-                                                    />
-                                                )
-                                            }
-                                            <div className="mt-2" style={{ fontSize: "0.9rem", fontWeight: 500 }}>
+                                            {Icon.render ? (
+                                                <Icon
+                                                    width={isMobile ? 28 : 42}
+                                                    height={isMobile ? 28 : 42}
+                                                    style={{
+                                                        fill: tech.color,
+                                                        filter: `drop-shadow(0 0 6px ${tech.color}88)`
+                                                    }}
+                                                />
+                                            ) : (
+                                                <Icon
+                                                    size={isMobile ? 28 : 42}
+                                                    color={tech.color}
+                                                    style={{
+                                                        filter: `drop-shadow(0 0 6px ${tech.color}88)`
+                                                    }}
+                                                />
+                                            )}
+                                            <div
+                                                style={{
+                                                    fontSize: isMobile ? "0.75rem" : "0.9rem",
+                                                    fontWeight: 500
+                                                }}
+                                            >
                                                 {tech.label}
                                             </div>
                                         </motion.div>
@@ -184,8 +185,7 @@ function Skills() {
                     transition={{ duration: 0.6 }}
                     className="pt-2"
                 >
-
-                    <Row >
+                    <Row>
                         <Col>
                             <h4
                                 className="mb-4"
@@ -202,12 +202,14 @@ function Skills() {
                                 {csConceptsAdvanced.map((concept, index) => (
                                     <Col md={6} key={index}>
                                         <motion.div
-                                            whileHover={{ scale: 1.02 }}
+                                            whileHover={{ scale: 1.03 }}
                                             transition={{ duration: 0.3 }}
                                             style={{
-                                                background: "#1b2225",
+                                                background: "rgba(255, 255, 255, 0.05)",
+                                                backdropFilter: "blur(12px)",
                                                 borderRadius: "1rem",
                                                 padding: "1.5rem",
+                                                border: "1px solid rgba(255,255,255,0.1)",
                                                 boxShadow: "0 2px 14px rgba(0,0,0,0.25)"
                                             }}
                                         >
@@ -236,9 +238,7 @@ function Skills() {
                             </Row>
                         </Col>
                     </Row>
-
                 </motion.div>
-
             </Container>
         </section>
     );
